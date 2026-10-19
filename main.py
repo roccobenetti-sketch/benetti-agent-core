@@ -178,7 +178,7 @@ def call_gemini_raw(contents: List[Dict[str, Any]], tools: List[Dict[str, Any]] 
         data=json.dumps(payload).encode("utf-8"),
         headers={"Content-Type": "application/json"}
     )
-    with urllib.request.urlopen(req, timeout=40) as resp:
+    with urllib.request.urlopen(req, timeout=25) as resp:
         return json.loads(resp.read().decode("utf-8"))
 
 @app.post("/api/agent/run-task", dependencies=[Depends(verify_pin)])
@@ -192,7 +192,7 @@ def run_agent_task(req: AgentTaskRequest):
     ]
 
     action_log = []
-    max_steps = 8
+    max_steps = 4
 
     for step in range(max_steps):
         res = call_gemini_raw(history, AGENT_TOOLS_SCHEMA)
