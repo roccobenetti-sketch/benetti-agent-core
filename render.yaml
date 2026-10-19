@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: benetti-agent-core
+    env: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python main.py"
+    plan: free
+    autoDeploy: true
+    envVars:
+      - key: AGENT_PIN
+        value: "2026"
+      - key: GEMINI_MODEL
+        value: "gemini-3.6-flash"
+      - key: GEMINI_KEY
+        sync: false

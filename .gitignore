@@ -1,0 +1,9 @@
+# .gitignore for Benetti Agent Core
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+venv/
+.tmp*
+*.log
