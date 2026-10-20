@@ -22,7 +22,7 @@ app.add_middleware(
 WORKSPACE_ROOT = os.path.abspath(os.environ.get("WORKSPACE_ROOT", "./workspace"))
 DEFAULT_PIN = os.environ.get("AGENT_PIN", "2026")
 GEMINI_KEY = os.environ.get("GEMINI_KEY", "")
-GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-flash-lite-latest")
+GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "Gemini-3.5-Flash-Lite")
 
 os.makedirs(WORKSPACE_ROOT, exist_ok=True)
 
